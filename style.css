@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+:root {
+  --card-width: 300px;
+  --card-height: 500px;
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+p,
+b,
+u,
+i,
+h1,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  background-color: #6b6b6b;
+  color: white;
+}
+
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  position: relative;
+}
+
+header {
+  height: 3rem;
+}
+
+main {
+  width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+footer {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: inherit;
+}
+
+.horizontal-ul {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: 4rem;
+    background-color: rgb(141, 109, 255);
+}
+
+.horizontal-ul-li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: antiquewhite;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    position: relative;
+
+}
+
+.horizontal-ul-li:hover, .horizontal-ul-li:active {
+    background-color: rgb(105, 105, 105);
+}
+
+.vertical-ul {
+    position: absolute;
+    top: 4rem;
+    left: 0;
+    width: 20rem;
+    padding: 2rem 1rem;
+    background-color: rgb(92, 99, 97);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    display: none;
+}
+
+.vertical-ul-li {
+    width: fit-content;
+}
+
+.vertical-ul-li:hover {
+    color: rgb(141, 109, 255);
+}
+
+.horizontal-ul-li:hover>.active {
+    display: flex
+}
