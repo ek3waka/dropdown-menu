@@ -5,10 +5,9 @@ function createHorizontalNavBar(...liNames) {
         const li = document.createElement('li')
         li.classList.add('horizontal-ul-li')
         li.textContent = `${liName}`
-        //еще один модуль сделать, мб вид спорта сделать объектом с массивом ссылок: матчи, новости и вся хуйня
+        li.id = `${liName}`
         ul.append(li)
     }
     return ul
 }
-
 export { createHorizontalNavBar }

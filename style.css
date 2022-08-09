@@ -179,8 +179,12 @@ button {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    gap: 4rem;
+    gap: 0.25rem;
     background-color: rgb(141, 109, 255);
+}
+
+li {
+  cursor: pointer;
 }
 
 .horizontal-ul-li {
@@ -205,15 +209,21 @@ button {
 .vertical-ul {
     position: absolute;
     top: 4rem;
-    left: 0;
     width: 20rem;
     padding: 2rem 1rem;
     background-color: rgb(92, 99, 97);
     display: flex;
     flex-direction: column;
     gap: 2rem;
-
     display: none;
+}
+
+.left-side {
+    left: 0;
+}
+
+.right-side {
+    right: 0;
 }
 
 .vertical-ul-li {
@@ -224,6 +234,14 @@ button {
     color: rgb(141, 109, 255);
 }
 
-.horizontal-ul-li:hover>.active {
+/* .horizontal-ul-li:hover>.active {
     display: flex
+} */
+
+.active {
+  display: flex
+}
+
+.vertical-ul:target-within {
+  display: flex
 }
