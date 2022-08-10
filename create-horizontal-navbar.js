@@ -4,8 +4,11 @@ function createHorizontalNavBar(...liNames) {
     for (let liName of liNames) {
         const li = document.createElement('li')
         li.classList.add('horizontal-ul-li')
-        li.textContent = `${liName}`
         li.id = `${liName}`
+        const a = document.createElement('a')
+        a.href = '#'
+        a.textContent = `${liName}`
+        li.append(a)
         ul.append(li)
     }
     return ul

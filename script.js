@@ -19,17 +19,24 @@ createVerticalNavBar('Chess', 'Matches', 'News', 'Blogs', 'Statuses', 'Transfers
 createVerticalNavBar('Cybersports', 'Matches', 'News', 'Blogs', 'Statuses', 'Transfers', 'Calendars')
 
 const sports = document.querySelectorAll('.horizontal-ul-li')
-console.log(sports)
+const menus = document.querySelectorAll('.vertical-ul-li')
+
 
 sports.forEach(sport => {
     const menu = document.querySelector(`#${sport.id}>ul`)
 
     sport.addEventListener('mouseover', () => {
+        menus.forEach(menu => {
+            menu.classList.remove('active')
+        })
         menu.classList.add('active')
     })
-    
+
     menu.addEventListener('mouseleave', () => {
         menu.classList.remove('active')
     })
-
+    sport.addEventListener('mouseleave', () => {
+        menu.classList.remove('active')
+    })
+    
 })

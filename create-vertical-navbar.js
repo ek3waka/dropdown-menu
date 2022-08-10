@@ -6,7 +6,10 @@ function createVerticalNavBar(li, ...liNames) {
     for (let liName of liNames) {
         const li = document.createElement('li')
         li.classList.add('vertical-ul-li')
-        li.textContent = `${liName}`
+        const a = document.createElement('a')
+        a.href = '#'
+        a.textContent = `${liName}`
+        li.append(a)
         ul.append(li)
     }
     parentLi.append(ul)
