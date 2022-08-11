@@ -148,8 +148,9 @@ body {
   position: relative;
 }
 
-header {
+.navbar {
   height: 3rem;
+  width: 100%;
 }
 
 main {
@@ -200,7 +201,7 @@ li {
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
     position: relative;
-    overflow-anchor: none;
+    
 }
 
 .horizontal-ul-li:hover {
@@ -248,4 +249,54 @@ li {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+@media (max-width: 400px) {
+  html {
+    height: 100%;
+    font-size: 12px;
+  }
+  main {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+  }
+  .navbar {
+    height: 96vh;
+    width: max-content
+  }
+
+  .horizontal-ul {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+    
+  }
+
+  .horizontal-ul-li {
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+
+
+  }
+
+  .vertical-ul {
+    width: 20rem;
+    z-index: 1;
+    border: none;
+}
+
+  .horizontal-ul-li:hover {
+    background-color: rgb(92, 99, 97);
+  
+}
+  .pushed {
+    margin-bottom: 23rem;
+  }
 }

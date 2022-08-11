@@ -2,12 +2,14 @@ import { createHorizontalNavBar } from "./create-horizontal-navbar.js"
 import { createVerticalNavBar } from "./create-vertical-navbar.js"
 
 const header = document.querySelector('header')
+const navbar = document.querySelector('.navbar')
+
 
 const horizontalUl = createHorizontalNavBar('Football', 'Hockey', 'Basketball', 'Auto', 'MMA', 'Biathlon', 'Chess', 'Cybersports')
 
 
 
-header.append(horizontalUl)
+navbar.append(horizontalUl)
 
 createVerticalNavBar('Football', 'Matches', 'News', 'Blogs', 'Statuses', 'Transfers', 'Calendars')
 createVerticalNavBar('Hockey', 'Matches', 'News', 'Blogs', 'Statuses', 'Transfers', 'Calendars')
@@ -30,13 +32,16 @@ sports.forEach(sport => {
             menu.classList.remove('active')
         })
         menu.classList.add('active')
+        sport.classList.add('pushed')
     })
 
     menu.addEventListener('mouseleave', () => {
         menu.classList.remove('active')
+        sport.classList.remove('pushed')
     })
     sport.addEventListener('mouseleave', () => {
         menu.classList.remove('active')
+        sport.classList.remove('pushed')
     })
     
 })
