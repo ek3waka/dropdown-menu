@@ -157,8 +157,10 @@ main {
   width: 100%;
   flex: 1 1 auto;
   display: flex;
+  flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
+  overflow: hidden;
 }
 
 footer {
@@ -223,6 +225,7 @@ li {
     visibility: hidden;
     border-top: solid rgb(141, 109, 255) 1rem;  
     border-radius: 0.25rem;
+    z-index: 2;
 }
 
 .left-side {
@@ -250,6 +253,77 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+
+
+.slider {
+  display: flex;
+  position: relative;
+  height: 30rem;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.buttons {
+  display: flex;
+  position: relative;
+  top: 21rem;
+  gap: 35rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-left, .arrow-right {
+  position: relative;
+  height: 12rem;
+  width: 5rem;
+  background-color: #6b6b6b;
+  opacity: 0.5;
+  z-index: 1;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.25s ease-in-out;
+  transform: scale(1);
+}
+
+.arrow-left:hover, .arrow-right:hover {
+  transition: all 0.5s ease-in-out;
+  transform: scale(1.1);
+  opacity: 0.6;
+}
+
+.images {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+img {
+  opacity: 0.8;
+  border-radius: 0.5rem;
+}
+
+
+.central {
+  
+}
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 400px) {
   html {
@@ -290,6 +364,7 @@ a {
     width: 20rem;
     z-index: 1;
     border: none;
+    border-top-left-radius: unset;
 }
 
   .horizontal-ul-li:hover {

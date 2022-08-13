@@ -45,3 +45,26 @@ sports.forEach(sport => {
     })
     
 })
+
+
+const images = document.querySelectorAll('img')
+
+const rightButton = document.querySelector('.arrow-right')
+const leftButton = document.querySelector('.arrow-left')
+const slider = document.querySelector('.slider')
+
+
+let rightOffset = 0
+
+rightButton.addEventListener('click', () => {
+    slider.style.right = `${rightOffset+=832}px`
+    console.log(slider.style.right)
+    
+})
+
+leftButton.addEventListener('click', () => {
+    slider.style.right = `${rightOffset-=832}px`
+
+    console.log(slider.style.right)
+
+})
