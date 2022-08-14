@@ -262,7 +262,6 @@ a {
   height: 30rem;
   justify-content: center;
   align-items: center;
-  
 }
 
 .buttons {
@@ -308,12 +307,13 @@ a {
 img {
   opacity: 0.8;
   border-radius: 0.5rem;
-}
-
-
-.central {
   
 }
+
+.right {
+  right: 4992px
+}
+
 
 
 

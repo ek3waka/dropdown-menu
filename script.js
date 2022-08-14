@@ -46,25 +46,52 @@ sports.forEach(sport => {
     
 })
 
-
-const images = document.querySelectorAll('img')
+const images = document.querySelector('.images')
+const imageslider = document.querySelectorAll('img')
+const imagesArray = Array.from(imageslider)
 
 const rightButton = document.querySelector('.arrow-right')
 const leftButton = document.querySelector('.arrow-left')
 const slider = document.querySelector('.slider')
-
-
-let rightOffset = 0
-
-rightButton.addEventListener('click', () => {
-    slider.style.right = `${rightOffset+=832}px`
-    console.log(slider.style.right)
-    
+imagesArray.forEach((image, index) => {
+    image.style.order = `${index}`
+    image.id = index
 })
+
+
 
 leftButton.addEventListener('click', () => {
-    slider.style.right = `${rightOffset-=832}px`
-
-    console.log(slider.style.right)
+    imagesArray.forEach((image, index, imagesArray) => {
+        image.style.order = `${Number(image.style.order)+1}`
+        switch (image.style.order) {
+            case '0':
+                image.style.order = `${imagesArray.length-1}`;
+                break;
+            case `${imagesArray.length}`:
+                image.style.order = '0';
+                break;
+            }
+        
+    })
 
 })
+
+rightButton.addEventListener('click', () => {
+   rightClick()
+})
+
+
+function rightClick() {
+    imagesArray.forEach((image, index, imagesArray) => {
+        image.style.order = `${Number(image.style.order)-1}`
+        switch (image.style.order) {
+            case `${imagesArray.length}`:
+                image.style.order = '0';
+                break;
+            case '-1':
+                image.style.order = `${imagesArray.length-1}`
+            }
+    })
+}
+
+setInterval(rightClick, 5000)
