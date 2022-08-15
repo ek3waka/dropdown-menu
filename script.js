@@ -58,6 +58,10 @@ imagesArray.forEach((image, index) => {
     image.id = index
 })
 
+const circles = Array.from(document.querySelectorAll('.circle'))
+let initialID = 0
+let initialActiveCircle = circles[initialID]
+initialActiveCircle.classList.add('circle-active')
 
 
 leftButton.addEventListener('click', () => {
@@ -73,11 +77,18 @@ leftButton.addEventListener('click', () => {
             }
         
     })
+    initialActiveCircle.classList.remove('circle-active')
+    initialID--
+    if (initialID == -1) {
+        initialID = circles.length - 1 
+    }
+    initialActiveCircle = circles[initialID]
+    initialActiveCircle.classList.add('circle-active')
 
 })
 
 rightButton.addEventListener('click', () => {
-   rightClick()
+    rightClick()    
 })
 
 
@@ -92,6 +103,15 @@ function rightClick() {
                 image.style.order = `${imagesArray.length-1}`
             }
     })
+    initialActiveCircle.classList.remove('circle-active')
+    initialID++
+    if (initialID == circles.length) {
+        initialID = 0
+    }
+    initialActiveCircle = circles[initialID]
+    initialActiveCircle.classList.add('circle-active')
 }
 
-setInterval(rightClick, 5000)
+
+
+const intervalScroll = setInterval(rightClick, 5000)

@@ -310,11 +310,28 @@ img {
   
 }
 
-.right {
-  right: 4992px
+.circle-indicators {
+  margin-top: 3rem;
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem
 }
 
+.circle {
+  height: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: inherit;
+  border: 3px solid white;
+}
 
+.circle-active {
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+}
 
 
 
